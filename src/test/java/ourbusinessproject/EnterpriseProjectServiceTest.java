@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 
@@ -21,10 +20,10 @@ class EnterpriseProjectServiceTest {
     private Project project;
     private Enterprise enterprise;
 
-    private Long anId = 1L;
+    private final Long anId = 1L;
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp() {
         enterpriseProjectService = new EnterpriseProjectService(entityManager);
     }
 
