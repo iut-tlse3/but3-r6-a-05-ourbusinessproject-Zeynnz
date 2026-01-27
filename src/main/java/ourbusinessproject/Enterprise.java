@@ -28,6 +28,7 @@ public class Enterprise {
     @Email
     private String contactEmail;
 
+
     /**
      * set the name
      * @param name the name
