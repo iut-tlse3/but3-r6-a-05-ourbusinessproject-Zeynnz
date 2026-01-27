@@ -91,4 +91,12 @@ public class Enterprise {
     public String getContactEmail(){
         return contactEmail;
     }
+
+    /**
+     *
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
 }

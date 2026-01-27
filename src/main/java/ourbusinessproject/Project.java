@@ -50,4 +50,12 @@ public class Project {
     public String getDescription() {
         return description;
     }
+
+    /**
+     *
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
 }
