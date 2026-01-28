@@ -5,6 +5,7 @@ import jakarta.validation.constraints.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 @Entity
 public class Enterprise {
@@ -117,7 +118,7 @@ public class Enterprise {
      */
     public void addProject(Project project) {
         if (this.projects == null){
-            this.projects = new ArrayList<>();
+            this.projects = new HashSet<>();
         }
         this.projects.add((project));
     }
