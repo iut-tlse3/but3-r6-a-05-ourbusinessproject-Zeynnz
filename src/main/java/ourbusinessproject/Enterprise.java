@@ -111,6 +111,10 @@ public class Enterprise {
         return this.projects;
     }
 
+    /**
+     * Add a project
+     * @param project the project
+     */
     public void addProject(Project project) {
         if (this.projects == null){
             this.projects = new ArrayList<>();
