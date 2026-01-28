@@ -1,10 +1,10 @@
 package ourbusinessproject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Enterprise {
@@ -28,6 +28,12 @@ public class Enterprise {
     @Email
     private String contactEmail;
 
+    @OneToMany(mappedBy = "enterprise")
+    private Collection<Project> projects;
+
+
+    public Enterprise() {
+    }
 
     /**
      * set the name
@@ -99,5 +105,16 @@ public class Enterprise {
      */
     public Long getId() {
         return id;
+    }
+
+    public Collection<Project> getProjects() {
+        return this.projects;
+    }
+
+    public void addProject(Project project) {
+        if (this.projects == null){
+            this.projects = new ArrayList<>();
+        }
+        this.projects.add((project));
     }
 }
