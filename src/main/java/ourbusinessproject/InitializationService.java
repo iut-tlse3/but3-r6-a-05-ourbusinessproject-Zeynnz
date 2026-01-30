@@ -11,9 +11,16 @@ public class InitializationService {
     private Project p1;
     private Project p2;
     private Project p3;
+    private Partnership partner1;
+    private Partnership partner2;
+    private Partnership partner3;
+
 
     @Autowired
     private EnterpriseProjectService enterpriseProjectService;
+
+    @Autowired
+    private PartnershipService partnershipService;
 
     /**
      * initialise some values for projects and enterprise
@@ -97,5 +104,25 @@ public class InitializationService {
      */
     public Enterprise getEnterprise2() {
         return e2;
+    }
+
+    @Transactional
+    public void initPartnerships() {
+        this.partner1 = partnershipService.newPartnership(p1,e2);
+        this.partner2 = partnershipService.newPartnership(p2,e1);
+        this.partner3 = partnershipService.newPartnership(p3,e2);
+
+    }
+
+    public Partnership getPartnershipP1E1WithE2() {
+        return partner1;
+    }
+
+    public Partnership getPartnershipP1E2WithE1() {
+        return partner2;
+    }
+
+    public Partnership getPartnershipP2E1WithE2() {
+        return partner3;
     }
 }

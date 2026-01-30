@@ -12,6 +12,8 @@ public class PartnershipService {
     @PersistenceContext
     private EntityManager entityManager;
 
+    public PartnershipService() {}
+
     public Partnership newPartnership(Project project, Enterprise partnerEnterprise) {
         Partnership newPartnership = new Partnership();
         newPartnership.setCreationDate(new Date());
