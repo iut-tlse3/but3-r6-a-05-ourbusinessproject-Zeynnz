@@ -18,7 +18,9 @@ public class InitializationService {
 
     @Transactional
     public void initProjects() {
-
+        // Si l'ajout d'un élément au cours de la méthode initProjects échoue, par exemple en donnant un titre null à un projet
+        // alors la "transaction" complète est annulée et rollback à son état d'origine ici aucun project.
+        // Ce qui explique le fait d'obtenir 0 projet dans testFindAllProjectsFromInitialization si un titre est null
        this.e1 = enterpriseProjectService.newEnterprise(
                 "Chasseneige",
                 "Ceci est une description parfaite pour une enterprise",
