@@ -19,6 +19,9 @@ public class Bootstrap {
         this.initializationService = initializationService;
     }
 
+    /**
+     * init for some values
+     */
     @PostConstruct
     public void init() {
         try {
@@ -28,6 +31,10 @@ public class Bootstrap {
         }
     }
 
+    /**
+     *
+     * @return the initialization service
+     */
     public InitializationService getInitializationService() {
         return this.initializationService;
     }

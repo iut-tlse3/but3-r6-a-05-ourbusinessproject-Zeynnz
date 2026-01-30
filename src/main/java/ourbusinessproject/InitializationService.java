@@ -15,7 +15,9 @@ public class InitializationService {
     @Autowired
     private EnterpriseProjectService enterpriseProjectService;
 
-
+    /**
+     * initialise some values for projects and enterprise
+     */
     @Transactional
     public void initProjects() {
         // Si l'ajout d'un élément au cours de la méthode initProjects échoue, par exemple en donnant un titre null à un projet
@@ -53,22 +55,46 @@ public class InitializationService {
         );
     }
 
+    /**
+     *
+     * @return the first project associated to the enterprise 1
+     */
     public Project getProject1E1() {
         return p1;
     }
 
+
+    /**
+     *
+     * @return the first project associated to the enterprise 2
+     */
     public Project getProject1E2() {
         return p2;
     }
 
+
+    /**
+     *
+     * @return the 2nd project associated to the enterprise 1
+     */
     public Project getProject2E1() {
         return p3;
     }
 
+
+    /**
+     *
+     * @return the enterprise 1
+     */
     public Enterprise getEnterprise1() {
         return e1;
     }
 
+
+    /**
+     *
+     * @return the enterprise 2
+     */
     public Enterprise getEnterprise2() {
         return e2;
     }

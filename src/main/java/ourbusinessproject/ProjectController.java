@@ -17,6 +17,10 @@ public class ProjectController {
         this.enterpriseProjectService = enterpriseProjectService;
     }
 
+    /**
+     * all projects with the associated enterprises
+     * @return the project
+     */
     @RequestMapping("/projects")
     public List<Project> findAllProjectsWithEnterprises() {
         return  enterpriseProjectService.findAllProjects();
